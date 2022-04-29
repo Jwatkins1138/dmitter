@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dmeet %>
+
+<div>
+  <%= link_to "Edit this dmeet", edit_dmeet_path(@dmeet) %> |
+  <%= link_to "Back to dmeets", dmeets_path %>
+
+  <%= button_to "Destroy this dmeet", @dmeet, method: :delete %>
+</div>

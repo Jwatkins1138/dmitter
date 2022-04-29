@@ -1,0 +1,2 @@
+class Dmeet < ApplicationRecord
+end

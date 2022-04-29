@@ -1,0 +1,22 @@
+<%= form_with(model: dmeet) do |form| %>
+  <% if dmeet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(dmeet.errors.count, "error") %> prohibited this dmeet from being saved:</h2>
+
+      <ul>
+        <% dmeet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :dmeet, style: "display: block" %>
+    <%= form.text_area :dmeet %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
