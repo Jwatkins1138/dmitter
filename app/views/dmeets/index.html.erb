@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<section class='section'>
+  <div class='container'>
+    <div class='columns'>
+      <%= render "feed"%>
+    </div>
+  </div>
+</section>
 
-<h1>Dmeets</h1>
 
-<div id="dmeets">
-  <% @dmeets.each do |dmeet| %>
-    <%= render dmeet %>
-    <p>
-      <%= link_to "Show this dmeet", dmeet %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New dmeet", new_dmeet_path %>
