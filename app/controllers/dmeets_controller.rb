@@ -1,6 +1,6 @@
 class DmeetsController < ApplicationController
   before_action :set_dmeet, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /dmeets or /dmeets.json
   def index
     @dmeets = Dmeet.all.order("created_at DESC")
@@ -26,7 +26,7 @@ class DmeetsController < ApplicationController
 
     respond_to do |format|
       if @dmeet.save
-        format.html { redirect_to dmeet_url(@dmeet), notice: "Dmeet was successfully created." }
+        format.html { redirect_to root_path, notice: "Dmeet was successfully created." }
         format.json { render :show, status: :created, location: @dmeet }
       else
         format.html { render :new, status: :unprocessable_entity }
