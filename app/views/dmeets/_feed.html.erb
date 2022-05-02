@@ -6,7 +6,7 @@
       </p>
     </figure>
     <div class='media-content'>
-
+      <%= render 'dmeets/form'%>
     </div>
   </article>
 </div>
@@ -27,8 +27,15 @@
         </div>
         <nav class='level'>
           <div class='level-left is-mobile'>
-            <% link_to dmeet, class: 'level-item' do %>
+            <%= link_to dmeet, class: 'level-item' do %>
               <span class='icon'><i class='fa fa-link' aria-hidden='true'></i></span>
+            <% end %>
+            <%= link_to edit_dmeet_path(dmeet), class: 'level-item' do %>
+              <span class='icon'><i class='fa fa-pencil' aria-hidden='true'></i></span>
+            <% end %>
+            <%= link_to dmeet, method: :delete, data: { confirm: "Are you sure you want to delete this dmeet?"
+              } do %>
+              <span class='icon'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
             <% end %>  
           </div>
         </nav>

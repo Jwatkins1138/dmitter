@@ -4,6 +4,7 @@ class DmeetsController < ApplicationController
   # GET /dmeets or /dmeets.json
   def index
     @dmeets = Dmeet.all.order("created_at DESC")
+    @dmeet = Dmeet.new
   end
 
   # GET /dmeets/1 or /dmeets/1.json
