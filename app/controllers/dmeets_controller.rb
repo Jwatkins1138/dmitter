@@ -13,7 +13,7 @@ class DmeetsController < ApplicationController
 
   # GET /dmeets/new
   def new
-    @dmeet = Dmeet.new
+    @dmeet = current_user.dmeets.build
   end
 
   # GET /dmeets/1/edit
@@ -22,7 +22,7 @@ class DmeetsController < ApplicationController
 
   # POST /dmeets or /dmeets.json
   def create
-    @dmeet = Dmeet.new(dmeet_params)
+    @dmeet = current_user.dmeets.build(dmeet_params)
 
     respond_to do |format|
       if @dmeet.save
