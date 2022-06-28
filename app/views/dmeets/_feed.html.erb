@@ -24,7 +24,7 @@
           <div class='content'>
             <strong><%= dmeet.user.name %></strong><br />
             <small>@<%= dmeet.user.username %></small><br />
-            <p><%= dmeet.dmeet %></p>
+            <p><%= simple_format(dmeet.dmeet) %></p>
           </div>
           <% else %>
           <div class='media-left'>
