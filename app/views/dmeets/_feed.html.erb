@@ -36,7 +36,7 @@
           <div class='content'>
             <strong>Anonymous</strong><br />
             <small>sign-in to reveal poster</small><br />
-            <p><%= dmeet.dmeet %></p>
+            <p><%= simple_format(dmeet.dmeet) %></p>
           </div>
           <% end %>
           <% if user_signed_in? %>
